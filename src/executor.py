@@ -51,7 +51,7 @@ class Executor(AgentExecutor):
 
         await updater.start_work()
         try:
-            await agent.run(msg, updater)
+            await agent.run(msg, updater, task)
             if not updater._terminal_state_reached:
                 await updater.complete()
         except Exception as e:

@@ -12,3 +12,7 @@ wheels/
 
 # Virtual environments
 .venv
+docker-compose.e2e.yml
+.context
+.local.bak
+.pytest_cache

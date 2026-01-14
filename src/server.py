@@ -24,21 +24,21 @@ def main():
     # See: https://a2a-protocol.org/latest/tutorials/python/3-agent-skills-and-card/
     
     skill = AgentSkill(
-        id="",
-        name="",
-        description="",
-        tags=[],
-        examples=[]
+        id="medical-qa",
+        name="Medical Question Answering",
+        description="Answers medical questions using LLMs",
+        tags=["medical", "qa"],
+        examples=["What are symptoms of flu?"]
     )
 
     agent_card = AgentCard(
-        name="",
-        description="",
+        name="Purple Agent",
+        description="Purple Participant Agent for MedAgentBenchmark",
         url=args.card_url or f"http://{args.host}:{args.port}/",
         version='1.0.0',
         default_input_modes=['text'],
         default_output_modes=['text'],
-        capabilities=AgentCapabilities(streaming=True),
+        capabilities=AgentCapabilities(streaming=False),
         skills=[skill]
     )
 
