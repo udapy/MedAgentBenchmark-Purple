@@ -174,6 +174,13 @@ def test_agent_card(agent):
 @pytest.mark.parametrize("streaming", [True, False])
 async def test_message(agent, streaming):
     """Test that agent returns valid A2A message format."""
+    # Check capabilities first
+    async with httpx.AsyncClient() as client:
+        resolver = A2ACardResolver(httpx_client=client, base_url=agent)
+        card = await resolver.get_agent_card()
+        if streaming and not card.capabilities.streaming:
+            pytest.skip("Agent does not support streaming")
+
     events = await send_text_message("Hello", agent, streaming=streaming)
 
     all_errors = []

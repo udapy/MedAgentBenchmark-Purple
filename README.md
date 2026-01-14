@@ -1,87 +1,143 @@
-# A2A Agent Template
+# MedAgentBenchmark Purple Agent
 
-A minimal template for building [A2A (Agent-to-Agent)](https://a2a-protocol.org/latest/) agents.
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## Project Structure
+The **Purple Agent** is a medical AI agent designed to participate in the [MedAgentBenchmark](https://github.com/udapy/MedAgentBenchmark) ecosystem. It acts as a candidate model that interacts with the Green Agent (verifier/orchestrator).
 
+## Features
+
+- **A2A Protocol**: Fully compliant with the Agent-to-Agent protocol for standardized communication.
+- **LLM Integration**: Supports OpenRouter and Nebius API for accessing medical LLMs (e.g., Gemini 2.0 Flash, DeepSeek).
+- **Dockerized**: Production-ready Docker container with healthchecks and optimized caching.
+- **CI/CD**: Automated testing and publishing to GitHub Container Registry (GHCR).
+
+## Prerequisites
+
+- [uv](https://github.com/astral-sh/uv) (for local Python management)
+- Docker & Docker Compose (for containerized execution)
+- API Keys (OpenRouter or Nebius)
+
+## Configuration
+
+Create a `.env` file in the root directory (copy from `.env.example`):
+
+```bash
+cp .env.example .env
 ```
-src/
-├─ server.py      # Server setup and agent card configuration
-├─ executor.py    # A2A request handling
-├─ agent.py       # Your agent implementation goes here
-└─ messenger.py   # A2A messaging utilities
-tests/
-└─ test_agent.py  # Agent tests
-Dockerfile        # Docker configuration
-pyproject.toml    # Python dependencies
-.github/
-└─ workflows/
-   └─ test-and-publish.yml # CI workflow
+
+**Required Environment Variables:**
+
+```env
+# Choose one provider:
+OPENROUTER_API_KEY=sk-or-...
+NEBIUS_API_KEY=...
+
+# Model Selection (defaults available):
+OPENROUTER_MODEL_NAME=deepseek/deepseek-v3
+NEBIUS_MODEL_NAME=deepseek-ai/DeepSeek-R1
+MODEL_NAME=google/gemini-2.0-flash-exp:free
 ```
-
-## Getting Started
-
-1. **Create your repository** - Click "Use this template" to create your own repository from this template
-
-2. **Implement your agent** - Add your agent logic to [`src/agent.py`](src/agent.py)
-
-3. **Configure your agent card** - Fill in your agent's metadata (name, skills, description) in [`src/server.py`](src/server.py)
-
-4. **Write your tests** - Add custom tests for your agent in [`tests/test_agent.py`](tests/test_agent.py)
-
-For a concrete example of implementing an agent using this template, see this [draft PR](https://github.com/RDI-Foundation/agent-template/pull/8).
 
 ## Running Locally
 
-```bash
-# Install dependencies
-uv sync
+1.  **Install dependencies:**
 
-# Run the server
-uv run src/server.py
-```
+    ```bash
+    make install
+    ```
+
+2.  **Run the agent:**
+    ```bash
+    make dev
+    ```
+    The agent will start on `http://localhost:9010` (mapped to port 9009 internally).
 
 ## Running with Docker
 
-```bash
-# Build the image
-docker build -t my-agent .
+We provide a robust Docker setup for both development and production.
 
-# Run the container
-docker run -p 9009:9009 my-agent
-```
+### Using Helper Script (Recommended)
 
-## Testing
-
-Run A2A conformance tests against your agent.
+This script handles network creation and container cleanup automatically.
 
 ```bash
-# Install test dependencies
-uv sync --extra test
-
-# Start your agent (uv or docker; see above)
-
-# Run tests against your running agent URL
-uv run pytest --agent-url http://localhost:9009
+./scripts/manage_docker.sh
 ```
 
-## Publishing
+### Using Docker Compose directly
 
-The repository includes a GitHub Actions workflow that automatically builds, tests, and publishes a Docker image of your agent to GitHub Container Registry.
-
-If your agent needs API keys or other secrets, add them in Settings → Secrets and variables → Actions → Repository secrets. They'll be available as environment variables during CI tests.
-
-- **Push to `main`** → publishes `latest` tag:
-```
-ghcr.io/<your-username>/<your-repo-name>:latest
+```bash
+docker compose up -d --build
 ```
 
-- **Create a git tag** (e.g. `git tag v1.0.0 && git push origin v1.0.0`) → publishes version tags:
-```
-ghcr.io/<your-username>/<your-repo-name>:1.0.0
-ghcr.io/<your-username>/<your-repo-name>:1
+The agent will be available at `http://localhost:9010`.
+
+## Testing & Verification
+
+The project includes a comprehensive suite of verification tools.
+
+1.  **Unit Tests**:
+
+    ```bash
+    make test
+    ```
+
+2.  **Health Check**:
+
+    ```bash
+    make verify
+    ```
+
+3.  **End-to-End Simulation**:
+    Simulates a full interaction flow locally.
+
+    ```bash
+    make verify-e2e
+    ```
+
+4.  **Curl Test**:
+    Quick connectivity check using curl.
+    ```bash
+    make curl-test
+    ```
+
+## Deployment
+
+The agent is automatically built and published to GHCR on push to main or valid tags.
+
+- **Image**: `ghcr.io/<your-username>/medagentbench-purple-agent`
+- **Tags**: `latest`, `v1.0.0` (semver)
+
+### Manual Publish (from local)
+
+Ensure you are logged in to GHCR (`docker login ghcr.io`).
+
+```bash
+make build
+docker tag purple-agent ghcr.io/<user>/medagentbench-purple-agent:latest
+docker push ghcr.io/<user>/medagentbench-purple-agent:latest
 ```
 
-Once the workflow completes, find your Docker image in the Packages section (right sidebar of your repository). Configure the package visibility in package settings.
+## Architecture
 
-> **Note:** Organization repositories may need package write permissions enabled manually (Settings → Actions → General). Version tags must follow [semantic versioning](https://semver.org/) (e.g., `v1.0.0`).
+- **`src/server.py`**: A2A Server entrypoint and Agent Card definition.
+- **`src/agent.py`**: Core agent logic and LLM interaction.
+- **`Dockerfile`**: optimized Python image using `uv`.
+- **`docker-compose.yml`**: Service definition connecting to the `medagentbenchmark-green_medagent-network`.
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new branch: `git checkout -b feature/your-feature`.
+3.  Commit your changes: `git commit -m 'Add some feature'`.
+4.  Push to the branch: `git push origin feature/your-feature`.
+5.  Submit a pull request.
+
+Please ensure your code passes all tests (`make check`) before submitting.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -6,7 +6,7 @@ on:
     branches:
       - main
     tags:
-      - 'v*'  # Trigger on version tags like v1.0.0, v1.1.0
+      - "v*"
 
 jobs:
   test-and-publish:
@@ -27,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}
+          images: ghcr.io/${{ github.repository_owner }}/medagentbench-purple-agent
           tags: |
             type=ref,event=pr
             type=semver,pattern={{version}}
@@ -46,7 +46,7 @@ jobs:
 
       - name: Start agent container
         env:
-            SECRETS_JSON: ${{ toJson(secrets) }}
+          SECRETS_JSON: ${{ toJson(secrets) }}
         run: |
           echo "$SECRETS_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' > .env
           docker run -d -p 9009:9009 --name agent-container --env-file .env $(echo "${{ steps.meta.outputs.tags }}" | head -n1) --host 0.0.0.0 --port 9009
@@ -78,7 +78,7 @@ jobs:
 
       - name: Push Docker image
         if: success() && github.event_name != 'pull_request'
-        run: docker push --all-tags ghcr.io/${GITHUB_REPOSITORY,,}
+        run: docker push --all-tags ghcr.io/${{ github.repository_owner }}/medagentbench-purple-agent
 
       - name: Output image digest
         if: success() && github.event_name != 'pull_request'

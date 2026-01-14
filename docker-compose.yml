@@ -1,0 +1,28 @@
+services:
+  purple-agent:
+    build: .
+    platform: linux/amd64
+    ports:
+      - "9010:9009"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - NEBIUS_API_KEY=${NEBIUS_API_KEY}
+      - OPENROUTER_MODEL_NAME=${OPENROUTER_MODEL_NAME}
+      - NEBIUS_MODEL_NAME=${NEBIUS_MODEL_NAME}
+      - MODEL_NAME=${MODEL_NAME:-google/gemini-2.0-flash-exp:free}
+    command: ["--host", "0.0.0.0", "--card-url", "http://purple-agent:9009"]
+    init: true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9009/.well-known/agent-card.json"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - medagent-network
+
+networks:
+  medagent-network:
+    name: medagentbenchmark-green_medagent-network
+    external: true
