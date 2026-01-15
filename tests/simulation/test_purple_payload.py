@@ -1,7 +1,13 @@
 import asyncio
 import json
 import pytest
+import sys
+import os
 from unittest.mock import AsyncMock, patch, MagicMock
+
+# Ensure src is in python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+
 from src.agent import Agent
 from a2a.types import Message, TaskState, Part, TextPart
 from a2a.server.tasks import TaskUpdater
