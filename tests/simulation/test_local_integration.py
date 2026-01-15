@@ -2,10 +2,12 @@ import asyncio
 import httpx
 import json
 import uuid
+import pytest
 
 AGENT_URL = "http://localhost:9010"
 FHIR_URL = "http://localhost:8080/fhir"
 
+@pytest.mark.asyncio
 async def test_integration():
     print(f"Testing integration with Agent at {AGENT_URL} and FHIR at {FHIR_URL}")
     
@@ -47,7 +49,7 @@ async def test_integration():
             resp = await client.get(f"{AGENT_URL}/card")
             print(f"Agent Card: {resp.status_code}")
         except Exception as e:
-            print(f"Failed to connect to agent: {e}")
+            pytest.skip(f"Skipping integration test: Failed to connect to agent at {AGENT_URL}. Error: {e}")
             return
 
         # Send Message
