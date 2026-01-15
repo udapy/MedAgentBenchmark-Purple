@@ -64,9 +64,7 @@ class Agent:
 
         Use self.messenger.talk_to_agent(message, url) to call other agents.
         """
-        print("DEBUG: Agent.run called")
         input_text = get_message_text(message)
-        print(f"DEBUG: Input text: {input_text[:100]}...")
 
         # 1. Payload Parsing
         try:
@@ -76,18 +74,15 @@ class Agent:
                 instruction = payload.get("instruction")
                 fhir_base_url = payload.get("fhir_base_url")
                 system_context = payload.get("system_context")
-                print(f"DEBUG: Parsed payload. FHIR URL: {fhir_base_url}")
             else:
                 # Fallback for plain text or unexpected JSON structure
                 instruction = input_text
                 fhir_base_url = None
                 system_context = None
-                print("DEBUG: Payload not recognized as Green Agent payload.")
         except json.JSONDecodeError:
             instruction = input_text
             fhir_base_url = None
             system_context = None
-            print("DEBUG: JSON decode error.")
 
         await updater.update_status(
             TaskState.working, new_agent_text_message("Processing request...")
@@ -95,7 +90,6 @@ class Agent:
 
         response_text = ""
         if not self.client:
-            print("DEBUG: No API key configured.")
             response_text = "Error: Agent not configured with API key."
         else:
             try:
@@ -142,19 +136,16 @@ class Agent:
                     })
 
                 # 4. LLM Call & Tool Execution Loop
-                print("DEBUG: Calling LLM...")
                 completion = await self.client.chat.completions.create(
                     model=self.model,
                     messages=messages,
                     tools=tools if tools else None,
                 )
-                print("DEBUG: LLM returned.")
                 
                 message = completion.choices[0].message
                 
                 # Handle tool calls
                 if message.tool_calls:
-                    print(f"DEBUG: Tool calls: {len(message.tool_calls)}")
                     messages.append(message) # Add the assistant's message with tool_calls
                     
                     for tool_call in message.tool_calls:
@@ -163,10 +154,8 @@ class Agent:
                             resource_type = func_args.get("resource_type")
                             params = func_args.get("params")
                             
-                            print(f"DEBUG: Executing tool {tool_call.function.name} with params {params}")
                             # Execute tool
                             tool_result = await search_fhir(fhir_base_url, resource_type, params)
-                            print(f"DEBUG: Tool result: {tool_result[:100]}...")
                             
                             messages.append({
                                 "role": "tool",
@@ -176,22 +165,17 @@ class Agent:
                             })
                     
                     # Call LLM again with tool results
-                    print("DEBUG: Calling LLM with tool outputs...")
                     second_completion = await self.client.chat.completions.create(
                         model=self.model,
                         messages=messages,
                         # tools=tools # Optional: keep tools if you want multi-step, but maybe limit for now
                     )
                     response_text = second_completion.choices[0].message.content
-                    print("DEBUG: Final response generated.")
                 else:
                     response_text = message.content
-                    print("DEBUG: No tool calls. Response generated.")
 
             except Exception as e:
                 import traceback
-                print(f"DEBUG: Exception: {str(e)}")
-                traceback.print_exc()
                 response_text = f"Error calling LLM: {str(e)}\n{traceback.format_exc()}"
 
         await updater.add_artifact(
