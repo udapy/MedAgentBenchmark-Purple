@@ -31,6 +31,54 @@ async def search_fhir(base_url: str, resource_type: str, params: dict) -> str:
     except Exception as e:
         return f"Error querying FHIR server: {str(e)}"
 
+
+def search_local_cache(name: str, dob: str) -> str | None:
+    try:
+        # Assuming med_data is in the project root
+        path = "med_data/prefetched-fhir-task1.json"
+        if not os.path.exists(path):
+             return None
+             
+        with open(path, "r") as f:
+            cache = json.load(f)
+            
+        target_name_parts = set(name.lower().split())
+        
+        for task_id, bundle in cache.items():
+            if not isinstance(bundle, dict) or "entry" not in bundle:
+                continue
+            
+            entries = bundle.get("entry", [])
+            if not entries:
+                continue
+                
+            resource = entries[0].get("resource", {})
+            if resource.get("resourceType") != "Patient":
+                continue
+                
+            if resource.get("birthDate") != dob:
+                continue
+                
+            human_names = resource.get("name", [])
+            found_name = False
+            for hn in human_names:
+                family = hn.get("family", "")
+                given = " ".join(hn.get("given", []))
+                full_name_str = f"{given} {family}".lower()
+                
+                if all(part in full_name_str for part in target_name_parts):
+                    found_name = True
+                    break
+            
+            if found_name:
+                return json.dumps(bundle)
+                    
+        return None
+
+    except Exception as e:
+        print(f"Cache lookup failed: {e}")
+        return None
+
 def parse_instruction(text: str) -> dict | None:
     """
     Heuristically parse the instruction to identify specific tasks.
@@ -168,7 +216,23 @@ class Agent:
                             "Patient", 
                             params
                         )
-                        heuristic_context = f"\n[CONTEXT FROM FHIR (Pre-fetched)]:\n{data}\n"
+                        
+                        # Fallback Mechanism: If live fetch fails, try local cache
+                        if data.startswith("Error"):
+                             print(f"Live FHIR search failed: {data}. Attempting local cache fallback...")
+                             cached_data = search_local_cache(parsed_task["name"], parsed_task["dob"])
+                             if cached_data:
+                                 data = cached_data
+                                 heuristic_context = f"\n[CONTEXT FROM CACHE (Fallback)]:\n{data}\n"
+                                 await updater.update_status(
+                                    TaskState.working, new_agent_text_message(f"FHIR unavailable. Using cached data for {parsed_task['name']}.")
+                                )
+                             else:
+                                 # If not in cache, keep original error but log it
+                                 heuristic_context = f"\n[CONTEXT FROM FHIR (Pre-fetched)]:\n{data}\n"
+                        else:
+                             heuristic_context = f"\n[CONTEXT FROM FHIR (Pre-fetched)]:\n{data}\n"
+                        
                         is_pre_fetched = True
                         skip_tools = True # Task 1 optimization: Skip tools
 

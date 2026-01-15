@@ -1,0 +1,2857 @@
+{
+  "task1_1": {
+    "resourceType": "Bundle",
+    "id": "c5e44e95-b8d6-4d3b-bf2c-aa0427c60df7",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:17.124+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1932-12-29&name=Peter&name=Stafford"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6534835",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6534835",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.789+00:00",
+            "source": "#EXu0nHSvNNuB4MFN"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2131-1",
+                    "display": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2135-2",
+                    "display": "Hispanic or Latino"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6534835"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Stafford",
+              "given": [
+                "Peter"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "271-106-7188",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1932-12-29",
+          "address": [
+            {
+              "line": [
+                "86480 Case Court Suite 524"
+              ],
+              "city": "Lake Jenniferport",
+              "state": "IA",
+              "postalCode": "35769"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_2": {
+    "resourceType": "Bundle",
+    "id": "b7444c22-729e-4a63-ad50-188f3101d660",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:18.427+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1940-03-05&name=Maria&name=Alvarez"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6426560",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6426560",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.779+00:00",
+            "source": "#4ThRdEI74ThD5pHp"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6426560"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Alvarez",
+              "given": [
+                "Maria"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "440-976-1128",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1940-03-05",
+          "address": [
+            {
+              "line": [
+                "437 Coleman Plains"
+              ],
+              "city": "New Jayville",
+              "state": "GU",
+              "postalCode": "85020"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_3": {
+    "resourceType": "Bundle",
+    "id": "55a79d34-b1cc-402a-b90c-2272d3e88d7e",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:18.674+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1989-04-19&name=Dana&name=Sandoval"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S1986380",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S1986380",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:45.880+00:00",
+            "source": "#Jl2qlcRtlfveodTC"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2131-1",
+                    "display": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2135-2",
+                    "display": "Hispanic or Latino"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S1986380"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Sandoval",
+              "given": [
+                "Dana"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "526-731-6291",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1989-04-19",
+          "address": [
+            {
+              "line": [
+                "874 Caitlyn Lakes Suite 793"
+              ],
+              "city": "Henrystad",
+              "state": "NV",
+              "postalCode": "92441"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_4": {
+    "resourceType": "Bundle",
+    "id": "122e93a7-b2a5-4594-b56e-173b989b2980",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:18.864+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1953-08-03&name=James&name=Snyder"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6484983",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6484983",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:46.412+00:00",
+            "source": "#vDkmC3uMSDLo0vBB"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6484983"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Snyder",
+              "given": [
+                "James"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "911-303-7270",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1953-08-03",
+          "address": [
+            {
+              "line": [
+                "4685 William Shoal Suite 878"
+              ],
+              "city": "Aguilarport",
+              "state": "MA",
+              "postalCode": "62694"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_5": {
+    "resourceType": "Bundle",
+    "id": "c39e5e4d-d374-4864-aeb5-e0c1c1491710",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:19.031+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1943-05-19&name=Justin&name=Gould"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S2703270",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S2703270",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:46.483+00:00",
+            "source": "#bDYxQkDNFMqMZPAh"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S2703270"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Gould",
+              "given": [
+                "Justin"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "244-458-8364",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1943-05-19",
+          "address": [
+            {
+              "line": [
+                "21525 Kristi Rapids Suite 358"
+              ],
+              "city": "Lake Shelby",
+              "state": "MA",
+              "postalCode": "07139"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_6": {
+    "resourceType": "Bundle",
+    "id": "15b66bec-0af3-47a5-a434-a55319ef7f5e",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:19.184+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1963-01-29&name=Andrew&name=Bishop"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S2874099",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S2874099",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.794+00:00",
+            "source": "#OJasalNnwuhpsz8E"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S2874099"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Bishop",
+              "given": [
+                "Andrew"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "949-726-2619",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1963-01-29",
+          "address": [
+            {
+              "line": [
+                "58507 Reese Circle"
+              ],
+              "city": "New Johnshire",
+              "state": "OK",
+              "postalCode": "18198"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_7": {
+    "resourceType": "Bundle",
+    "id": "8a3e504b-a2d1-458a-96e1-4c29a61ee876",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:19.349+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1953-11-19&name=Kevin&name=Vasquez"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6200102",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6200102",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.779+00:00",
+            "source": "#jxqQZM9EcysO4D4m"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2028-9",
+                    "display": "Asian"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6200102"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Vasquez",
+              "given": [
+                "Kevin"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "460-949-3905",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1953-11-19",
+          "address": [
+            {
+              "line": [
+                "84894 Mason Motorway Suite 744"
+              ],
+              "city": "Crystalland",
+              "state": "IL",
+              "postalCode": "01512"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_8": {
+    "resourceType": "Bundle",
+    "id": "0d1a1286-4914-437e-aaba-78259bac62e4",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:19.526+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1954-08-10&name=Brian&name=Buchanan"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6530532",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6530532",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:46.022+00:00",
+            "source": "#5jDjI6AahtI6dgI9"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2131-1",
+                    "display": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6530532"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Buchanan",
+              "given": [
+                "Brian"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "387-339-2189",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1954-08-10",
+          "address": [
+            {
+              "line": [
+                "3503 Rocha Views Suite 532"
+              ],
+              "city": "Alfredview",
+              "state": "TN",
+              "postalCode": "75492"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_9": {
+    "resourceType": "Bundle",
+    "id": "c17d3327-40be-4405-b2aa-9ab635e8ab36",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:19.676+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1960-08-18&name=Katrina&name=Golden"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6539215",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6539215",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:46.230+00:00",
+            "source": "#QnZR8Yaa5jZUCNDv"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6539215"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Golden",
+              "given": [
+                "Katrina"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "043-400-4292",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1960-08-18",
+          "address": [
+            {
+              "line": [
+                "2547 Jeffrey Track Apt. 213"
+              ],
+              "city": "Tammyberg",
+              "state": "IN",
+              "postalCode": "61631"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_10": {
+    "resourceType": "Bundle",
+    "id": "ef7b3ed6-d3f1-4000-b5ab-772476e0a410",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:19.833+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1967-03-11&name=Joshua&name=Martinez"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6264184",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6264184",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.785+00:00",
+            "source": "#PX8AEJxVyACutZz9"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2054-5",
+                    "display": "Black or African American"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6264184"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Martinez",
+              "given": [
+                "Joshua"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "659-850-0928",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1967-03-11",
+          "address": [
+            {
+              "line": [
+                "712 Carter Lake"
+              ],
+              "city": "North Briana",
+              "state": "CA",
+              "postalCode": "06649"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_11": {
+    "resourceType": "Bundle",
+    "id": "a4acdaf6-b809-402d-897c-e9e1234fca97",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:20.036+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1952-11-14&name=Glenda&name=Hall"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6521727",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6521727",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:45.882+00:00",
+            "source": "#mq7sy1ZRJMDqrjMD"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2131-1",
+                    "display": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2135-2",
+                    "display": "Hispanic or Latino"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6521727"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Hall",
+              "given": [
+                "Glenda"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "511-923-2314",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1952-11-14",
+          "address": [
+            {
+              "line": [
+                "1301 Abbott Vista Apt. 027"
+              ],
+              "city": "Drewbury",
+              "state": "CA",
+              "postalCode": "18247"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_12": {
+    "resourceType": "Bundle",
+    "id": "9ddcfd8e-970a-4dd4-93f4-7d4054b4439b",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:20.279+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1982-08-24&name=Margaret&name=Kidd"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S0789363",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S0789363",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:45.756+00:00",
+            "source": "#YtF2OoohfiQNbz8T"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2054-5",
+                    "display": "Black or African American"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S0789363"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Kidd",
+              "given": [
+                "Margaret"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "226-453-0838",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1982-08-24",
+          "address": [
+            {
+              "line": [
+                "54838 Harvey Island Suite 142"
+              ],
+              "city": "Lake Yolandabury",
+              "state": "IN",
+              "postalCode": "15144"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_13": {
+    "resourceType": "Bundle",
+    "id": "aa5308fe-2bad-41bb-914a-5acb41943276",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:20.454+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1942-05-11&name=Emily&name=Hicks"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S2154941",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S2154941",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:45.590+00:00",
+            "source": "#ZIdGOEcNkHCDn3CI"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2028-9",
+                    "display": "Asian"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S2154941"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Hicks",
+              "given": [
+                "Emily"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "610-427-7971",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1942-05-11",
+          "address": [
+            {
+              "line": [
+                "4600 Erica Fort Suite 364"
+              ],
+              "city": "Cameronchester",
+              "state": "SD",
+              "postalCode": "30274"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_14": {
+    "resourceType": "Bundle",
+    "id": "72a51d8c-65da-4c5c-93a6-9d759a91cc47",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:20.708+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1994-09-15&name=Pamela&name=Merritt"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S2197736",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S2197736",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.792+00:00",
+            "source": "#2qHbvOngOidq9RWW"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2131-1",
+                    "display": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S2197736"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Merritt",
+              "given": [
+                "Pamela"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "434-359-5015",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1994-09-15",
+          "address": [
+            {
+              "line": [
+                "8819 Jones Keys Apt. 652"
+              ],
+              "city": "Jesseborough",
+              "state": "WI",
+              "postalCode": "60661"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_15": {
+    "resourceType": "Bundle",
+    "id": "10c75d61-7670-4091-b3e7-798009ed3e3c",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:20.857+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1945-09-20&name=Denise&name=Dunlap"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S3228213",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S3228213",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:46.266+00:00",
+            "source": "#js77HtdprYEPZ71t"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S3228213"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Dunlap",
+              "given": [
+                "Denise"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "798-289-1716",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1945-09-20",
+          "address": [
+            {
+              "line": [
+                "764 James Coves Apt. 032"
+              ],
+              "city": "Christinaburgh",
+              "state": "NV",
+              "postalCode": "41301"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_16": {
+    "resourceType": "Bundle",
+    "id": "166659b4-d34f-477d-b107-8aa74c123950",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:21.070+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1969-05-12&name=Debra&name=Dunn"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6551923",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6551923",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.784+00:00",
+            "source": "#gXF5EwHNNnsUZUEi"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2028-9",
+                    "display": "Asian"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6551923"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Dunn",
+              "given": [
+                "Debra"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "887-676-9654",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1969-05-12",
+          "address": [
+            {
+              "line": [
+                "775 Christine Keys Suite 483"
+              ],
+              "city": "North Jessica",
+              "state": "ID",
+              "postalCode": "20183"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_17": {
+    "resourceType": "Bundle",
+    "id": "02dabd30-b991-4c12-892f-72bc8501ae20",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:21.241+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1956-11-16&name=Shannon&name=Palmer"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S2119664",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S2119664",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:45.396+00:00",
+            "source": "#XVCRQVzrbp4O7ngl"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S2119664"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Palmer",
+              "given": [
+                "Shannon"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "964-289-7393",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1956-11-16",
+          "address": [
+            {
+              "line": [
+                "0709 Daniel Hollow"
+              ],
+              "city": "East Jennifer",
+              "state": "AZ",
+              "postalCode": "51265"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_18": {
+    "resourceType": "Bundle",
+    "id": "f32c2734-79a6-4d61-9db3-1554cd2828e5",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:21.424+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1973-08-14&name=Melissa&name=Nguyen"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S2863714",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S2863714",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:45.492+00:00",
+            "source": "#b9toNqa81QEq12hY"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "1002-5",
+                    "display": "American Indian or Alaska Native"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "UNK",
+                    "display": "Unknown"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S2863714"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Nguyen",
+              "given": [
+                "Melissa"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "071-841-1337",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1973-08-14",
+          "address": [
+            {
+              "line": [
+                "687 Richard Falls Suite 602"
+              ],
+              "city": "Scottville",
+              "state": "AL",
+              "postalCode": "38348"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_19": {
+    "resourceType": "Bundle",
+    "id": "c561dc39-d1a8-4da8-99b5-c70f3c8eecec",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:21.615+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1959-04-28&name=Tim&name=Ramos"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6192632",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6192632",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:46.153+00:00",
+            "source": "#z8ZFyy3U4c7HmVft"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6192632"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Ramos",
+              "given": [
+                "Tim"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "982-656-5041",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1959-04-28",
+          "address": [
+            {
+              "line": [
+                "086 Michelle Walk"
+              ],
+              "city": "Port Adamstad",
+              "state": "ID",
+              "postalCode": "94831"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_20": {
+    "resourceType": "Bundle",
+    "id": "4fa42747-f901-4f95-921c-738bfd0ae7a9",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:21.766+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1940-08-28&name=Christopher&name=Cruz"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S0658561",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S0658561",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.791+00:00",
+            "source": "#7I5nD3BVAdi7hjaL"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2028-9",
+                    "display": "Asian"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S0658561"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Cruz",
+              "given": [
+                "Christopher"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "342-994-7161",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1940-08-28",
+          "address": [
+            {
+              "line": [
+                "USNV Franco"
+              ]
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_21": {
+    "resourceType": "Bundle",
+    "id": "80531e3e-a26c-4f35-aaac-bed51634a34c",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:21.939+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1959-01-24&name=Tina&name=Anderson"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S0547588",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S0547588",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.780+00:00",
+            "source": "#LzaKsU451Nzvxu47"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2054-5",
+                    "display": "Black or African American"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S0547588"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Anderson",
+              "given": [
+                "Tina"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "453-127-9775",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1959-01-24",
+          "address": [
+            {
+              "line": [
+                "88541 Harvey Pine Apt. 580"
+              ],
+              "city": "Deanton",
+              "state": "MD",
+              "postalCode": "17465"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_22": {
+    "resourceType": "Bundle",
+    "id": "9dbcf858-b924-44fb-bc56-cb06f423c26c",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:22.098+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1975-05-30&name=Robert&name=Gardner"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S0722219",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S0722219",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:46.491+00:00",
+            "source": "#NsyAgkUraoMh3blJ"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S0722219"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Gardner",
+              "given": [
+                "Robert"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "902-414-3017",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1975-05-30",
+          "address": [
+            {
+              "line": [
+                "0822 Morris Lake Apt. 485"
+              ],
+              "city": "Jeremyshire",
+              "state": "MT",
+              "postalCode": "66232"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_23": {
+    "resourceType": "Bundle",
+    "id": "ea0e83ea-e797-4077-988e-2e8593feec51",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:22.258+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1962-01-20&name=Julie&name=Rodriguez"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S3057899",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S3057899",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:45.880+00:00",
+            "source": "#Wq7a0OyTepsKkXjV"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2131-1",
+                    "display": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2135-2",
+                    "display": "Hispanic or Latino"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S3057899"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Rodriguez",
+              "given": [
+                "Julie"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "427-951-6108",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1962-01-20",
+          "address": [
+            {
+              "line": [
+                "491 Terrence Key Suite 441"
+              ],
+              "city": "Fletcherland",
+              "state": "RI",
+              "postalCode": "43076"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_24": {
+    "resourceType": "Bundle",
+    "id": "cd27443f-bc70-4414-9067-6f7067e354cc",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:22.410+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1943-02-11&name=Katherine&name=Sutton"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6538722",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6538722",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.788+00:00",
+            "source": "#EfL4daHHyVqqeh0k"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2106-3",
+                    "display": "White"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6538722"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Sutton",
+              "given": [
+                "Katherine"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "850-826-8380",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1943-02-11",
+          "address": [
+            {
+              "line": [
+                "9418 Angel Shoals Suite 828"
+              ],
+              "city": "Port Kayla",
+              "state": "MN",
+              "postalCode": "23322"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_25": {
+    "resourceType": "Bundle",
+    "id": "2c451380-b117-4617-a416-947576cf3744",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:22.557+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1964-01-02&name=Russell&name=Shields"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S6545016",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S6545016",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:45.558+00:00",
+            "source": "#kQfDubBzmfd1smAw"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2028-9",
+                    "display": "Asian"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S6545016"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Shields",
+              "given": [
+                "Russell"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "926-643-7313",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1964-01-02",
+          "address": [
+            {
+              "line": [
+                "3635 John Mountains"
+              ],
+              "city": "Lake Chrisside",
+              "state": "MH",
+              "postalCode": "73986"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_26": {
+    "resourceType": "Bundle",
+    "id": "50e13da0-61f0-4ca5-931f-d9c5f6d46446",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:22.720+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=2002-06-07&name=Victoria&name=Owens"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S3236936",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S3236936",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.795+00:00",
+            "source": "#VkC8h6slefhMve1w"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2131-1",
+                    "display": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S3236936"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Owens",
+              "given": [
+                "Victoria"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "156-181-9491",
+              "use": "home"
+            }
+          ],
+          "gender": "female",
+          "birthDate": "2002-06-07",
+          "address": [
+            {
+              "line": [
+                "1817 Hurley Station Apt. 001"
+              ],
+              "city": "Cooleyport",
+              "state": "IN",
+              "postalCode": "65477"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_27": {
+    "resourceType": "Bundle",
+    "id": "475ce11e-8235-4d4b-b21a-7e0f845d2a97",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:22.882+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1953-10-18&name=Tina&name=Reid"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S3213957",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S3213957",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.793+00:00",
+            "source": "#ssX53ETvVJnnv2H5"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2028-9",
+                    "display": "Asian"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2186-5",
+                    "display": "Non-Hispanic"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S3213957"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Reid",
+              "given": [
+                "Tina"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "655-427-2484",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1953-10-18",
+          "address": [
+            {
+              "line": [
+                "57262 Crystal Spur Suite 802"
+              ],
+              "city": "Alexandriastad",
+              "state": "NM",
+              "postalCode": "23064"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_28": {
+    "resourceType": "Bundle",
+    "id": "e1e59ad0-efbc-4e0b-b050-42250fad89e5",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:23.051+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1988-12-04&name=Tracey&name=Stanley"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "http://localhost:8080/fhir/Patient/S2704870",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "S2704870",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2024-12-30T19:05:44.793+00:00",
+            "source": "#HNtLHiPPxcztJmZS"
+          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Race",
+                    "code": "2131-1",
+                    "display": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/Ethnicity",
+                    "code": "2135-2",
+                    "display": "Hispanic or Latino"
+                  }
+                ]
+              }
+            }
+          ],
+          "identifier": [
+            {
+              "use": "usual",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "MR",
+                    "display": "Medical Record Number"
+                  }
+                ]
+              },
+              "value": "S2704870"
+            }
+          ],
+          "name": [
+            {
+              "use": "official",
+              "family": "Stanley",
+              "given": [
+                "Tracey"
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "813-460-4831",
+              "use": "home"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1988-12-04",
+          "address": [
+            {
+              "line": [
+                "65290 Graham Station"
+              ],
+              "city": "North Kurtfurt",
+              "state": "IA",
+              "postalCode": "05197"
+            }
+          ]
+        },
+        "search": {
+          "mode": "match"
+        }
+      }
+    ]
+  },
+  "task1_29": {
+    "resourceType": "Bundle",
+    "id": "0dec8856-8717-48eb-a28e-33f6ac01adc0",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:23.214+00:00"
+    },
+    "type": "searchset",
+    "total": 0,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1969-05-15&name=Debra&name=Dunn"
+      }
+    ]
+  },
+  "task1_30": {
+    "resourceType": "Bundle",
+    "id": "95fa669d-9d41-4c58-91b8-701997ec09c3",
+    "meta": {
+      "lastUpdated": "2026-01-15T23:01:23.350+00:00"
+    },
+    "type": "searchset",
+    "total": 0,
+    "link": [
+      {
+        "relation": "self",
+        "url": "http://localhost:8080/fhir/Patient?birthdate=1969-05-15&name=Kyle&name=Jia"
+      }
+    ]
+  }
+}
