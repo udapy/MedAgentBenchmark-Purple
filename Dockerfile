@@ -15,6 +15,7 @@ RUN --mount=type=cache,target=/home/agent/.cache/uv,uid=1000 \
 
 # Copy source code
 COPY --chown=agent:agent src src
+COPY --chown=agent:agent med_data med_data
 
 # Install the project itself
 RUN --mount=type=cache,target=/home/agent/.cache/uv,uid=1000 \
