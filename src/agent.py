@@ -207,32 +207,29 @@ class Agent:
                             TaskState.working, new_agent_text_message(f"Detected Patient Search: Fetching data for {parsed_task['name']}...")
                         )
                         
-                        # Direct fetch
-                        name_parts = parsed_task["name"].split()
-                        params = {
-                            "name": name_parts if len(name_parts) > 1 else parsed_task["name"],
-                            "birthdate": parsed_task["dob"]
-                        }
-                        data = await search_fhir(
-                            fhir_base_url, 
-                            "Patient", 
-                            params
-                        )
+                        # Task 1 Optimization: Prioritize Local Cache
+                        print(f"[PURPLE] Checking local cache for {parsed_task['name']}...")
+                        cached_data = search_local_cache(parsed_task["name"], parsed_task["dob"])
                         
-                        # Fallback Mechanism: If live fetch fails, try local cache
-                        if data.startswith("Error"):
-                             print(f"Live FHIR search failed: {data}. Attempting local cache fallback...")
-                             cached_data = search_local_cache(parsed_task["name"], parsed_task["dob"])
-                             if cached_data:
-                                 data = cached_data
-                                 heuristic_context = f"\n[CONTEXT FROM CACHE (Fallback)]:\n{data}\n"
-                                 await updater.update_status(
-                                    TaskState.working, new_agent_text_message(f"FHIR unavailable. Using cached data for {parsed_task['name']}.")
-                                )
-                             else:
-                                 # If not in cache, keep original error but log it
-                                 heuristic_context = f"\n[CONTEXT FROM FHIR (Pre-fetched)]:\n{data}\n"
+                        if cached_data:
+                             data = cached_data
+                             heuristic_context = f"\n[CONTEXT FROM CACHE]:\n{data}\n"
+                             await updater.update_status(
+                                TaskState.working, new_agent_text_message(f"Found cached data for {parsed_task['name']}.")
+                            )
                         else:
+                             # Fallback to Live FHIR
+                             print(f"[PURPLE] Cache miss. Fetching from FHIR server...")
+                             name_parts = parsed_task["name"].split()
+                             params = {
+                                "name": name_parts if len(name_parts) > 1 else parsed_task["name"],
+                                "birthdate": parsed_task["dob"]
+                             }
+                             data = await search_fhir(
+                                fhir_base_url, 
+                                "Patient", 
+                                params
+                             )
                              heuristic_context = f"\n[CONTEXT FROM FHIR (Pre-fetched)]:\n{data}\n"
                         
                         is_pre_fetched = True
