@@ -163,6 +163,7 @@ class Agent:
         Use self.messenger.talk_to_agent(message, url) to call other agents.
         """
         input_text = get_message_text(message)
+        print(f"[PURPLE] Received Input: {input_text}", flush=True)
 
         # 1. Payload Parsing
         try:
@@ -188,7 +189,8 @@ class Agent:
 
         response_text = ""
         if not self.client:
-            response_text = "Error: Agent not configured with API key."
+             response_text = "Error: Agent not configured with API key."
+             print(f"[PURPLE] {response_text}", flush=True)
         else:
             try:
                 # 2. Heuristic Pre-Fetch
@@ -276,8 +278,13 @@ class Agent:
                 # Handling History
                 if task and task.history:
                      for msg in task.history:
-                        # For now, we rely on the current instruction/payload.
-                        pass
+                        role = "user" if msg.role == "user" else "assistant" # Map 'agent' to 'assistant'
+                        if msg.role == "agent":
+                             role = "assistant"
+                        
+                        text = get_message_text(msg)
+                        if text:
+                            messages.append({"role": role, "content": text})
 
                 user_content = instruction + heuristic_context
                 messages.append({"role": "user", "content": user_content})
@@ -306,6 +313,9 @@ class Agent:
                             }
                         }
                     })
+
+                # Log the full prompt
+                print(f"[PURPLE] Sending Prompt to LLM ({self.model}):\n{json.dumps(messages, indent=2)}", flush=True)
 
                 # 5. LLM Call
                 completion = await self.client.chat.completions.create(
@@ -349,6 +359,7 @@ class Agent:
             except Exception as e:
                 import traceback
                 response_text = f"Error calling LLM: {str(e)}\n{traceback.format_exc()}"
+                print(f"[PURPLE] Exception: {response_text}", flush=True)
 
         await updater.add_artifact(
             parts=[Part(root=TextPart(text=response_text))],
