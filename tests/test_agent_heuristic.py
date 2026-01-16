@@ -83,36 +83,38 @@ async def test_agent_run_heuristic_match():
         with patch("agent.search_fhir", new_callable=AsyncMock) as mock_search_fhir:
             mock_search_fhir.return_value = json.dumps({"resourceType": "Bundle", "entry": [{"resource": {"id": "123"}}]})
 
-            # Create input message
-            payload = {
-                "instruction": "Find MRN for Brian Buchanan (DOB: 1954-08-10)",
-                "fhir_base_url": "http://mock-fhir",
-                "system_context": "Some context"
-            }
-            message_text = json.dumps(payload)
-            message = Message(
-                kind="message", 
-                role=Role.user, 
-                parts=[Part(root=TextPart(text=message_text))],
-                message_id="msg-1"
-            )
-            updater = MockTaskUpdater()
-
-            # Run Agent
-            await agent.run(message, updater)
-
-            # Assertions
-            mock_search_fhir.assert_called_once()
-            args, _ = mock_search_fhir.call_args
-            assert args[0] == "http://mock-fhir"
-            assert args[1] == "Patient"
-            assert args[2] == {"name": ["Brian", "Buchanan"], "birthdate": "1954-08-10"}
-
-            agent.client.chat.completions.create.assert_called_once()
-            call_kwargs = agent.client.chat.completions.create.call_args.kwargs
-            
-            # Tools should be skipped for Task 1
-            assert call_kwargs["tools"] is None or len(call_kwargs["tools"]) == 0
+            # Force Cache Miss to test Live Search path
+            with patch("agent.search_local_cache", return_value=None):
+                # Create input message
+                payload = {
+                    "instruction": "Find MRN for Brian Buchanan (DOB: 1954-08-10)",
+                    "fhir_base_url": "http://mock-fhir",
+                    "system_context": "Some context"
+                }
+                message_text = json.dumps(payload)
+                message = Message(
+                    kind="message", 
+                    role=Role.user, 
+                    parts=[Part(root=TextPart(text=message_text))],
+                    message_id="msg-1"
+                )
+                updater = MockTaskUpdater()
+    
+                # Run Agent
+                await agent.run(message, updater)
+    
+                # Assertions
+                mock_search_fhir.assert_called_once()
+                args, _ = mock_search_fhir.call_args
+                assert args[0] == "http://mock-fhir"
+                assert args[1] == "Patient"
+                assert args[2] == {"name": ["Brian", "Buchanan"], "birthdate": "1954-08-10"}
+    
+                agent.client.chat.completions.create.assert_called_once()
+                call_kwargs = agent.client.chat.completions.create.call_args.kwargs
+                
+                # Tools should be skipped for Task 1
+                assert call_kwargs["tools"] is None or len(call_kwargs["tools"]) == 0
 
 @pytest.mark.asyncio
 async def test_agent_run_heuristic_task2_age():
@@ -254,7 +256,7 @@ async def test_search_local_cache():
             assert result_fail is None
 
 @pytest.mark.asyncio
-async def test_agent_run_fallback_success():
+async def test_agent_run_cache_priority():
     # Setup Agent
     with patch.dict("os.environ", {"NEBIUS_API_KEY": "mock_key"}):
         agent = Agent()
@@ -263,9 +265,8 @@ async def test_agent_run_fallback_success():
         mock_completion.choices = [MagicMock(message=MagicMock(content="MRN is S1", tool_calls=None))]
         agent.client.chat.completions.create.return_value = mock_completion
 
-        # Mock search_fhir to FAIL
+        # Mock search_fhir (should NOT be called if cache hits)
         with patch("agent.search_fhir", new_callable=AsyncMock) as mock_search_fhir:
-            mock_search_fhir.return_value = "Error: Connection refused"
             
             # Mock local cache to SUCCEED
             mock_cache_data = json.dumps({"resourceType": "Bundle", "entry": [{"resource": {"resourceType": "Patient", "id": "S1"}}]})
@@ -273,25 +274,25 @@ async def test_agent_run_fallback_success():
                 
                 payload = {
                      "instruction": "Find MRN for Brian Buchanan (DOB: 1954-08-10)",
-                     "fhir_base_url": "http://bad-url"
+                     "fhir_base_url": "http://mock-fhir"
                 }
                 message = Message(
                     kind="message", role=Role.user, 
-                    parts=[Part(root=TextPart(text=json.dumps(payload)))], message_id="msg-fb"
+                    parts=[Part(root=TextPart(text=json.dumps(payload)))], message_id="msg-prio"
                 )
                 updater = MockTaskUpdater()
                 
                 await agent.run(message, updater)
                 
                 # Check logic
-                # 1. Live search called and failed
-                mock_search_fhir.assert_called_once()
-                
-                # 2. Cache search called
+                # 1. Cache search called FIRST
                 mock_cache_search.assert_called_once_with("Brian Buchanan", "1954-08-10")
                 
-                # 3. Context injected from cache
+                # 2. Live search NOT called (Preference for cache)
+                mock_search_fhir.assert_not_called()
+                
+                # 3. Context injected from cache with Correct Label
                 call_kwargs = agent.client.chat.completions.create.call_args.kwargs
                 user_msg = call_kwargs["messages"][1]["content"]
-                assert "CONTEXT FROM CACHE (Fallback)" in user_msg
+                assert "[CONTEXT FROM CACHE]:" in user_msg
                 assert '"id": "S1"' in user_msg
